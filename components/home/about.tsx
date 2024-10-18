@@ -3,7 +3,7 @@ export default function About() {
     <section>
       <h2>About</h2>
       <p>
-        Hello! I'm Krisnaadi, a full-stack developer. More than 5 year
+        Hello! I&apos;m Krisnaadi, a full-stack developer. More than 5 year
         experience
       </p>
       <ul>
