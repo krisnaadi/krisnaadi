@@ -1,8 +1,8 @@
 services:
-  with-docker-multi-env-development:
+  with-docker-multi-env-production:
     build:
       context: ../../
-      dockerfile: docker/development/Dockerfile
-    image: with-docker-multi-env-development
+      dockerfile: docker/production/Dockerfile
+    image: with-docker-multi-env-production
     ports:
-      - "3001:3000"
+      - "3003:3000"
