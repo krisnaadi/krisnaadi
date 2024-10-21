@@ -1,27 +1,22 @@
-export default function About() {
+import { createClient } from "@/utils/supabase/server";
+
+export default async function About() {
+  const supabase = createClient();
+  const { data: toolsets } = await supabase.from("toolsets").select();
   return (
     <section>
       <h2>About</h2>
       <p>
-        Hello! I&apos;m Krisnaadi, a full-stack developer. More than 5 year
-        experience
+        Hello! I&apos;m Krisnaadi Suastika, a full-stack developer. More than 5
+        year experience
       </p>
       <ul>
-        <li>
-          <h3>Front-end</h3>
-          <p>Typescript / Nuxtjs / Nextjs</p>
-        </li>
-        <li>
-          <h3>Styles</h3>
-          <p>Tailwindcss / Bootstrap / Picocss</p>
-        </li>
-        <li>
-          <h3>Back-end</h3>
-          <p>
-            PHP / Laravel / Golang / PostgreSQL / MySQL / Redis / Docker /
-            Sqlite
-          </p>
-        </li>
+        {toolsets?.map((toolset) => (
+          <li key={toolset.id}>
+            <h3>{toolset.title}</h3>
+            <p>{toolset.desc}</p>
+          </li>
+        ))}
       </ul>
     </section>
   );

@@ -3,7 +3,6 @@ import { createClient } from "@/utils/supabase/server";
 export default async function Work() {
   const supabase = createClient();
   const { data: works } = await supabase.from("works").select();
-  console.log(works);
   return (
     <section>
       <h2>Work</h2>

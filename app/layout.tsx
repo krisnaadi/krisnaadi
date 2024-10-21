@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import "@picocss/pico/css/pico.cyan.min.css";
 import "./globals.css";
-import "@picocss/pico/css/pico.zinc.min.css";
 import Header from "@/components/layout/header";
 import { Analytics } from "@vercel/analytics/react";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+import { Roboto_Mono } from "next/font/google";
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={robotoMono.className}>
         <Header />
         {children}
         <Analytics />

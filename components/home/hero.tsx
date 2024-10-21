@@ -7,8 +7,8 @@ export default function Hero() {
         a smooth and enjoyable development experience.
       </p>
       <p className="grid">
-        <button className="outline">Github</button>
-        <button className="outline">Linkedin</button>
+        <button>Github</button>
+        <button>Linkedin</button>
       </p>
     </section>
   );
