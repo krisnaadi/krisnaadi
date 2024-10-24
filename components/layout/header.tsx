@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="container">
@@ -7,10 +9,10 @@ export default function Header() {
         </ul>
         <ul>
           <li>
-            <a>About</a>
+            <Link href="/">About</Link>
           </li>
           <li>
-            <a>Projects</a>
+            <Link href="#">Projects</Link>
           </li>
         </ul>
       </nav>
