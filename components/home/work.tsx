@@ -1,8 +1,10 @@
+"use server";
+
 import { createClient } from "@/utils/supabase/server";
 
 export default async function Work() {
   const supabase = createClient();
-  const { data: works } = await supabase.from("works").select();
+  const { data: works } = await supabase.from("works").select().order('id', { ascending: true });
   return (
     <section>
       <h2>Work</h2>
